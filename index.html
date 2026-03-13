@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Frannia Arias Guzmán | Medicina General Integral</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Definición de colores exactos basados en la imagen */
+        :root {
+            --dr-blue-dark: #002B5B;   /* Azul oscuro del texto principal */
+            --dr-cyan: #00C2CB;        /* Turquesa/Cian de acento y estetoscopio */
+            --dr-text-gray: #555555;   /* Gris para textos secundarios */
+            --dr-white: #ffffff;
+            --dr-bg-light: #F9F9F9;
+        }
+
+        /* Reseteo básico y Accesibilidad: Fuentes legibles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dr-white);
+            color: var(--dr-text-gray);
+            line-height: 1.6;
+            font-size: 18px; /* Tamaño de fuente base amigable para accesibilidad */
+        }
+
+        /* Contenedor Principal: Usa Flexbox para PC */
+        .main-container {
+            display: flex;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        /* Sección de Texto (Izquierda) */
+        .content-section {
+            flex: 1;
+            padding-right: 50px;
+            max-width: 650px;
+        }
+
+        /* Sección de Imagen (Derecha) */
+        .image-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Estilo de la foto de la Doctora */
+        .doctor-photo {
+            width: 100%;
+            max-width: 450px; /* Tamaño máximo en PC */
+            height: auto;
+            border-radius: 50%; /* Foto circular como en la imagen */
+            border: 8px solid var(--dr-white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Sombra suave */
+            object-fit: cover;
+        }
+
+        /* Elemento decorativo turquesa (esquina inferior derecha) */
+        .cyan-corner {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background-color: var(--dr-cyan);
+            border-radius: 50%;
+            z-index: -1; /* Queda detrás de la foto */
+        }
+
+        /* Tipografía y Estilos de Texto (replicando la tarjeta) */
+        .doctor-name {
+            color: var(--dr-blue-dark);
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .doctor-code {
+            color: var(--dr-text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--dr-text-gray); /* Línea divisoria gris */
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .service-title {
+            color: var(--dr-blue-dark);
+            font-size: 2.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        /* Sección de Contacto y WhatsApp */
+        .contact-section {
+            margin-top: 40px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        /* Estilo para el estetoscopio decorativo (opcional) */
+        .stethoscope-icon {
+            color: var(--dr-cyan);
+            font-size: 3rem;
+            margin-top: 10px;
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dr-text-gray);
+        }
+
+        /* Botón de WhatsApp Accesible y Llamativo */
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--dr-cyan); /* Usamos el cian de la tarjeta */
+            color: var(--dr-white);
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 15px rgba(0, 194, 203, 0.3);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .whatsapp-btn:hover, .whatsapp-btn:focus {
+            background-color: #00A8B0; /* Un cian un poco más oscuro al pasar el mouse */
+            transform: translateY(-3px);
+            outline: 3px solid var(--dr-blue-dark); /* Outline para accesibilidad en foco */
+            outline-offset: 2px;
+        }
+
+        .whatsapp-btn i {
+            margin-right: 15px;
+            font-size: 1.6rem;
+        }
+
+        /* ===== MEDIA QUERIES: RESPONSIVE DESIGN (Tablets y Celulares) ===== */
+
+        /* Tablets y pantallas medianas */
+        @media (max-width: 992px) {
+            .main-container {
+                padding: 30px;
+            }
+            .service-title {
+                font-size: 1.8rem;
+            }
+            .doctor-photo {
+                max-width: 350px;
+            }
+        }
+
+        /* Celulares (Pantallas pequeñas) */
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column-reverse; /* En móvil, la foto va ARRIBA del texto */
+                text-align: center;
+                padding: 20px;
+            }
+
+            .content-section {
+                padding-right: 0;
+                margin-top: 30px;
+                width: 100%;
+            }
+
+            .image-section {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .doctor-photo {
+                max-width: 250px; /* Foto más pequeña en móvil */
+                border-width: 5px;
+            }
+
+            .cyan-corner {
+                width: 100px;
+                height: 100px;
+                bottom: -10px;
+                right: -10px;
+            }
+
+            .doctor-code {
+                display: block;
+                border-bottom: none;
+            }
+
+            .service-title {
+                font-size: 1.6rem;
+            }
+
+            .contact-section {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .stethoscope-icon {
+                font-size: 2.5rem;
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="main-container" role="main">
+        
+        <section class="content-section">
+            <h1 class="doctor-name">DRA. FRANNIA ARIAS GUZMÁN / MÉDICA</h1>
+            <p class="doctor-code">COD. 7805</p>
+            
+            <h2 class="service-title">CONSULTA DE MEDICINA GENERAL INTEGRAL</h2>
+            
+            <div class="contact-section">
+                <i class="fa-solid fa-stethoscope stethoscope-icon" aria-hidden="true"></i>
+                
+                <div>
+                    <p class="cta-text">Agenda tu cita al WhatsApp</p>
+                    <a href="https://wa.me/50688316669?text=Hola%20Dra.%20Frannia,%20me%20gustaría%20agendar%20una%20cita." class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp"></i> 8831-6669
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="image-section" aria-label="Fotografía de la Dra. Frannia Arias Guzmán">
+            <img src="foto-doctora.jpg" alt="Dra. Frannia Arias Guzmán sonriendo con uniforme médico" class="doctor-photo">
+            <div class="cyan-corner" aria-hidden="true"></div>
+        </section>
+
+    </main>
+
+</body>
+</html>
