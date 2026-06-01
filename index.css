@@ -1,0 +1,317 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    color: #333333;
+    background-color: #fafafa;
+}
+
+h1{ font-size: 3em; margin-bottom: 10px;}
+h2{ font-size: 2.5em;}
+h3{ font-size: 1.6em; color: #00a896;} /* Color cian/turquesa médico */
+p{ font-size: 1.1em; line-height: 1.6;}
+ul{ list-style: none; padding: 0;}
+li{ font-size: 1.25em;}
+
+/* Botones con estilo elegante basado en la identidad de la imagen */
+.btn-principal {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 12px 35px;
+    border-radius: 30px;
+    color: white;
+    background-color: #00a896; /* Turquesa Corporativo */
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 168, 150, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-principal:hover{
+    background-color: #028074;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 168, 150, 0.4);
+}
+
+.btn-info {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 20px;
+    color: white;
+    background-color: #a81d43; /* Tono vino/rojo elegante tomado de la foto */
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-info:hover {
+    background-color: #7d122f;
+}
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.color-acento{ color: #00a896; }
+
+header{
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+header .logo-container {
+    padding: 20px 0;
+    text-align: center;
+}
+
+header .logo{
+    margin: 0;
+    font-weight: bold;
+    color: #00a896;
+    font-size: 1.8em;
+}
+
+header .cod-medico {
+    font-size: 0.85em;
+    letter-spacing: 1px;
+    color: #666;
+    font-weight: bold;
+}
+
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+header a{
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #444444;
+    font-size: 1em;
+    transition: color 0.2s ease;
+}
+
+header a:hover{
+    color: #00a896;
+}
+
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 80vh;
+    /* Gradiente profesional usando el cian corporativo translúcido */
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 56, 50, 0.7),
+        rgba(0, 168, 150, 0.6)
+    ), url("Foto-para-la-página-de-Dra-Frannia-Arias-Guzman.jpeg"); /* Usando la foto de fondo */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#hero h1{
+    color: white;
+    text-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+}
+
+.hero-sub {
+    color: white;
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    max-width: 600px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+#sobre-mi {
+    background-color: #ffffff;
+    
+}
+
+#sobre-mi .container{
+    text-align: center;
+    padding: 80px 20px;
+}
+
+#servicios{
+    background-color: #f0f7f6; /* Fondo verde médico claro muy sutil */
+    text-align: center;
+}
+
+#servicios .container{
+    padding: 80px 20px;
+}
+
+#servicios h2{
+    margin-top: 0;
+    color: #222;
+}
+
+/* Distribución de las tarjetas de especialidades */
+#servicios .programas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+#servicios .carta{
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid #00a896; /* Detalle superior turquesa */
+    transition: transform 0.3s ease;
+}
+
+#servicios .carta:hover {
+    transform: translateY(-5px);
+}
+
+#servicios p{
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+#caracteristicas .container{
+    text-align: center;
+    padding: 100px 20px;
+}
+
+#caracteristicas li{
+    margin: 20px 0px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+#contacto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #1a252f;
+    color: white;
+    padding: 80px 20px;
+}
+
+#contacto h2{
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+#contacto p {
+    color: #bdc3c7;
+    margin-bottom: 5px;
+}
+
+.whatsapp-num {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #00a896 !important;
+    margin-bottom: 25px !important;
+}
+
+footer{
+    background-color: #11181f;
+    border-top: 1fr solid #2c3e50;
+}
+
+footer p{
+    margin: 0;
+    padding: 25px;
+    color: #7f8c8d;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+@media (min-width: 768px){
+    header{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    body {
+        padding-top: 90px; /* Evita que el menú fijo tape el hero */
+    }
+
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header .logo-container {
+        text-align: left;
+    }
+
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+    }
+
+    #hero h1{
+        font-size: 4em;
+    }
+
+    #sobre-mi .container{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: left;
+    }
+
+    #sobre-mi .texto{
+        width: 55%;
+    }
+
+    /* AQUÍ SE REALIZA EL CAMBIO PARA EL CÍRCULO PERFECTO */
+    #sobre-mi .img-container{
+        background-image: url("Foto-para-la-página-de-Dra-Frannia-Arias-Guzman.jpeg"); /* Cambiado a su foto de perfil */
+        background-size: cover;
+        background-position: center 20%; /* Centra su rostro verticalmente de forma óptima */
+        height: 380px;
+        width: 380px; 
+        border-radius: 50%;
+        border: 4px solid #00a896; /* Un fino borde turquesa que resalta la imagen */
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    /* Grid de servicios en 2 columnas */
+    #servicios .programas{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    #servicios .programas{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
